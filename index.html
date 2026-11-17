@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<!--
+  axol-apps.com landing page.
+  One card per subdomain. Cards in "Server" only open while you're connected to
+  Tailscale (their DNS points at the server's Tailscale address, 100.66.49.50).
+  To add a site: copy one <article class="appCard"> block and change the icon,
+  name, text and link. Styles live in css/Styles.css (section 13b), shared with
+  the other Axol Apps sites.
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Vi Snyder's apps: portfolio, D&D campaign tools, character sheets and home server.">
+    <title>Axol Apps</title>
+    <link rel="icon" href="images/favicon.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/Styles.css" rel="stylesheet">
+</head>
+
+<body class="landing">
+    <nav class="navbar navbar-expand-lg navbar-primary bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html"><img src="images/axolotl.png" alt="Axol Apps home"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navLinks" aria-controls="navLinks" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navLinks">
+                <ul class="navbar-nav me-auto my-2 my-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="#sites">Sites</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#server">Server</a></li>
+                    <li class="nav-item"><a class="nav-link" href="https://portfolio.axol-apps.com/">Portfolio</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <div class="row">
+            <div id="header" class="col-12">
+                <img src="images/axolotl.png" alt="">
+                <h1>Axol Apps</h1>
+                <p>Everything I've built and host, in one place.</p>
+            </div>
+        </div>
+
+        <!-- Public sites (GitHub Pages) -->
+        <section id="sites" class="appGroup">
+            <h2>Sites</h2>
+            <p>Open to anyone.</p>
+            <div class="appGrid">
+
+                <article class="appCard">
+                    <!-- scroll -->
+                    <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M14 8h22a4 4 0 0 1 4 4v4h-6"/><path d="M34 16v20a4 4 0 0 1-4 4H12"/><path d="M12 40a4 4 0 0 1-4-4v-2h18v2a4 4 0 0 0 4 4"/><path d="M14 8a4 4 0 0 0-4 4v22"/><path d="M17 17h11M17 23h11M17 29h7"/></svg>
+                    <h3>Portfolio</h3>
+                    <p>Who I am, what I've built, and a couple of games I made in High School.</p>
+                    <span class="appUrl">portfolio.axol-apps.com</span>
+                    <a class="appBtn" href="https://portfolio.axol-apps.com/">Open Portfolio</a>
+                </article>
+
+                <article class="appCard">
+                    <!-- tankard -->
+                    <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M10 14h22v24a3 3 0 0 1-3 3H13a3 3 0 0 1-3-3z"/><path d="M32 19h4a4 4 0 0 1 4 4v6a4 4 0 0 1-4 4h-4"/><path d="M10 14c0-4 3-6 6-6 1-2 4-3 6-2 2-2 6-1 7 1 3 0 4 3 3 7"/><path d="M16 22v12M21 22v12M26 22v12"/></svg>
+                    <h3>Drunk</h3>
+                    <p>Dashboard for Drunk D&D</p>
+                    <span class="appUrl">drunk.axol-apps.com</span>
+                    <a class="appBtn" href="https://drunk.axol-apps.com/">Open Drunk</a>
+                </article>
+
+                <article class="appCard">
+                    <!-- d20 -->
+                    <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 5l17 10v18L24 43 7 33V15z"/><path d="M24 5l-9 15h18zM15 20L7 15M33 20l8-5M15 20l9 15 9-15M24 35v8M15 20L7 33M33 20l8 13M7 33l17 2 17-2"/></svg>
+                    <h3>Infused</h3>
+                    <p>D&D Infused Campaign</p>
+                    <span class="appUrl">infused.axol-apps.com</span>
+                    <a class="appBtn" href="https://infused.axol-apps.com/">Open Infused</a>
+                </article>
+
+                <article class="appCard">
+                    <!-- character sheet -->
+                    <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M12 6h18l8 8v28H12z"/><path d="M30 6v8h8"/><circle cx="20" cy="18" r="3"/><path d="M16 26h16M16 31h16M16 36h10"/></svg>
+                    <h3>Sheets</h3>
+                    <p>Store, share, and play with your D&D Character Sheets</p>
+                    <span class="appUrl">sheets.axol-apps.com</span>
+                    <a class="appBtn" href="https://sheets.axol-apps.com/">Open Sheets</a>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- Home server: only reachable over Tailscale -->
+        <section id="server" class="appGroup">
+            <h2>Server</h2>
+            <p>These only open while you're connected to my VPN.</p>
+            <div class="appGrid">
+
+                <article class="appCard">
+                    <span class="appTag">Tailscale only</span>
+                    <!-- pickaxe -->
+                    <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M8 18c8-9 22-11 32-6-8-2-16 0-22 5"/><path d="M18 17l4 4"/><path d="M22 21L8 40"/><path d="M40 12c-1 6-4 11-9 15"/></svg>
+                    <h3>Crafty</h3>
+                    <p>Control panel for the Minecraft server: start, stop, console and backups.</p>
+                    <span class="appUrl">minecraft.axol-apps.com:8443</span>
+                    <a class="appBtn" href="https://minecraft.axol-apps.com:8443/">Open Crafty</a>
+                </article>
+
+                <article class="appCard">
+                    <span class="appTag">Tailscale only</span>
+                    <!-- shield -->
+                    <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 5l15 6v11c0 10-6 17-15 21C15 39 9 32 9 22V11z"/><path d="M17 24l5 5 9-10"/></svg>
+                    <h3>AdGuard</h3>
+                    <p>Network-wide ad and tracker blocking, with query logs and filters.</p>
+                    <span class="appUrl">adguard.axol-apps.com:8080</span>
+                    <a class="appBtn" href="http://adguard.axol-apps.com:8080/">Open AdGuard</a>
+                </article>
+
+                <article class="appCard">
+                    <!-- network -->
+                    <svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="10" r="4"/><circle cx="10" cy="36" r="4"/><circle cx="38" cy="36" r="4"/><circle cx="24" cy="27" r="3"/><path d="M24 14v10M21.5 29L13 34M26.5 29L35 34M14 36h20"/></svg>
+                    <h3>Tailscale (VPN)</h3>
+                    <p>Admin console for the VPN: devices, users and access.</p>
+                    <span class="appUrl">vpn.axol-apps.com</span>
+                    <a class="appBtn" href="https://vpn.axol-apps.com/">Open Tailscale</a>
+                </article>
+
+                <article class="appCard">
+                    <!-- TV -->
+                    <svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="10" r="4"/><circle cx="10" cy="36" r="4"/><circle cx="38" cy="36" r="4"/><circle cx="24" cy="27" r="3"/><path d="M24 14v10M21.5 29L13 34M26.5 29L35 34M14 36h20"/></svg>
+                    <h3>FrameXTV</h3>
+                    <p>Watch any TV Show or Movie</p>
+                    <span class="appUrl">https://tv.axol-apps.com/</span>
+                    <a class="appBtn" href="https://tv.axol-apps.com/">Open FrameXTV</a>
+                </article>
+
+            </div>
+        </section>
+
+        <div class="row">
+            <div id="footer" class="col-12">
+                <h6>Copyright &copy; Vi Snyder <span id="year">2026</span></h6>
+            </div>
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>
